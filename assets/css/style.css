@@ -1,4 +1,9 @@
 .small{
-    width: 30% ;
+    width: 20% ;
+    height: auto;
+    margin-left:10%;
+}
+#stack_chart{
+    width: 100%;
     height: auto;
 }
