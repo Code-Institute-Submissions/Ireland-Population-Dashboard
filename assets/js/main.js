@@ -18,6 +18,7 @@ queue()
     function makeGraphs(error, data) {
         var ndx = crossfilter(data);
         show_country_chart(ndx);
+        show_county_chart(ndx);
       
         dc.renderAll();
     }
@@ -25,16 +26,31 @@ queue()
 /***********************************************  Sex Pie Chart */
 
 function show_country_chart(ndx) {
-    var sex_category = ndx.dimension(dc.pluck('country'));
-    var totalSex = sex_category.group().reduceSum(dc.pluck('tot_population'));
+    let countries_dim = ndx.dimension(dc.pluck('country'));
+    let population = countries_dim.group().reduceSum(dc.pluck('tot_population'));
 
     dc.pieChart('#country_chart')
         .width(150)
         .height(150)
         .useViewBoxResizing(true)
         .transitionDuration(500)
-        .dimension(sex_category)
-        .group(totalSex)
+        .dimension(countries_dim)
+        .group(population)
+        
+        
+}
+
+function show_county_chart(ndx) {
+    var county_dim = ndx.dimension(dc.pluck('county'));
+    var population = county_dim.group().reduceSum(dc.pluck('tot_population'));
+
+    dc.pieChart('#county_chart')
+        .width(150)
+        .height(150)
+        .useViewBoxResizing(true)
+        .transitionDuration(500)
+        .dimension(county_dim)
+        .group(population)
         
         
 }
