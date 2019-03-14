@@ -17,42 +17,24 @@ queue()
     .await(makeGraphs);
     function makeGraphs(error, data) {
         var ndx = crossfilter(data);
-        // show_country_selector(ndx);
-        // show_year_selector(ndx);
-        // show_line_graph(ndx);
-        show_bar_chart(ndx);
-        // show_scatterplot(ndx);
-        // show_sex_chart(ndx);
-        // show_age_chart(ndx);
-        // show_population_info(ndx);
-    
+        show_country_chart(ndx);
+      
         dc.renderAll();
-    
-        // console.log(data);
     }
-    
-function show_bar_chart(ndx) {
-    var counties = ndx.dimension(dc.pluck('county'));
-    var totalPopulation = counties.group().reduceSum(dc.pluck('tot_population'));
 
-    dc.barChart('#bar_chart')
-        .width(800)
-        .height(350)
-        .dimension(counties)
-        .group(totalPopulation)
-        .transitionDuration(500)
-        // .colors(d3.scale.ordinal().range(colors))
-        .x(d3.scale.ordinal())
-        .margins({
-            top: 30,
-            left: 70,
-            bottom: 70,
-            right: 20
-        })
+/***********************************************  Sex Pie Chart */
+
+function show_country_chart(ndx) {
+    var sex_category = ndx.dimension(dc.pluck('country'));
+    var totalSex = sex_category.group().reduceSum(dc.pluck('tot_population'));
+
+    dc.pieChart('#country_chart')
+        .width(150)
+        .height(150)
         .useViewBoxResizing(true)
-        .xUnits(dc.units.ordinal)
-        .elasticY(true)
-        .xAxisLabel('Year')
-        .yAxisLabel('Life expectancy (years)')
-        .yAxis().ticks(7);
+        .transitionDuration(500)
+        .dimension(sex_category)
+        .group(totalSex)
+        
+        
 }
