@@ -7,6 +7,7 @@ queue()
             tot_population: +row.TOTPOP,
             male_population: +row.MALE,
             female_population: +row.FEMALE,
+            density: +row.POPDENKM,
             age_014: +row.AGE014T,
             age_1524: +row.AGE1524T,
             age_2544: +row.AGE2544T,
@@ -15,14 +16,16 @@ queue()
         };
     })
     .await(makeGraphs);
-    function makeGraphs(error, data) {
-        var ndx = crossfilter(data);
-        show_country_chart(ndx);
-        show_county_chart(ndx);
-        show_stack_chart(ndx);
-      
-        dc.renderAll();
-    }
+
+function makeGraphs(error, data) {
+    var ndx = crossfilter(data);
+    show_country_chart(ndx);
+    show_county_chart(ndx);
+    show_stack_chart(ndx);
+    show_scatterplot(ndx);
+
+    dc.renderAll();
+}
 
 /***********************************************  Sex Pie Chart */
 
@@ -37,8 +40,8 @@ function show_country_chart(ndx) {
         .transitionDuration(500)
         .dimension(countries_dim)
         .group(population)
-        
-        
+
+
 }
 
 function show_county_chart(ndx) {
@@ -54,7 +57,7 @@ function show_county_chart(ndx) {
         .group(population)
 }
 
-function show_stack_chart(ndx){
+function show_stack_chart(ndx) {
     let county_dim = ndx.dimension(dc.pluck('county'));
     let age_one = county_dim.group().reduceSum(dc.pluck('age_014'));
     let age_two = county_dim.group().reduceSum(dc.pluck('age_1524'));
@@ -63,27 +66,75 @@ function show_stack_chart(ndx){
     let age_five = county_dim.group().reduceSum(dc.pluck('age_65plus'));
 
     dc.barChart('#stack_chart')
-    .width(1000)
-    .height(350)
-    .dimension(county_dim)
-    .group(age_one,'0 to 14')
-    .stack(age_two,'14 to 24')
-    .stack(age_three,'25 to 44')
-    .stack(age_four,'45 to 64')
-    .stack(age_five,'64 plus')
-    .transitionDuration(500)
-    .x(d3.scale.ordinal())
-    .margins({
-        top: 30,
-        left: 70,
-        bottom: 70,
-        right: 20
-    })
-    .legend(dc.legend().x(720).y(20).itemHeight(15).gap(5))
-    .useViewBoxResizing(true)
-    .xUnits(dc.units.ordinal)
-    .elasticY(true)
-    .xAxisLabel('Counties')
-    .yAxisLabel('Population')
-    .yAxis().ticks(7);
+        .width(1000)
+        .height(350)
+        .dimension(county_dim)
+        .group(age_one, '0 to 14')
+        .stack(age_two, '14 to 24')
+        .stack(age_three, '25 to 44')
+        .stack(age_four, '45 to 64')
+        .stack(age_five, '64 plus')
+        .transitionDuration(500)
+        .x(d3.scale.ordinal())
+        .margins({
+            top: 30,
+            left: 70,
+           bottom: 70,
+            right: 20
+        })
+        .legend(dc.legend().x(720).y(20).itemHeight(15).gap(5))
+        .useViewBoxResizing(true)
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .xAxisLabel('Counties')
+        .yAxisLabel('Population')
+        .yAxis().ticks(7);
+}
+
+function show_scatterplot(ndx) {
+
+    let pop_dim = ndx.dimension(dc.pluck('tot_population'))
+    let scatterplot_dimension = ndx.dimension(function(d){ 
+       return [d.tot_population,d.density, d.cou;
+    });
+    let scatterplot_group = scatterplot_dimension.group();
+
+    // x linear has to be for tot_population otherwise gruops number
+    // for density I have write function which will add density numbers in county and later on divide 
+
+
+
+
+    var pop_min = pop_dim.bottom(1)[0].tot_population;
+    var pop_max = pop_dim.top(1)[0].tot_population;
+
+    dc.scatterPlot('#scatterplot')
+        .width(1000)
+        .height(350)
+        .x(d3.scale.linear().domain([pop_min, pop_max]))
+        .symbolSize(8)
+        .clipPadding(20)
+        .title(function (d) {
+            return (
+                'In  ' +
+                d.key[0] + " " +
+                d.key[2] +
+                ' density was ' +
+                d.key[1]
+            );
+        })
+        .useViewBoxResizing(true)
+        .brushOn(false)
+        .elasticY(true)
+        .yAxisLabel('')
+        .xAxisLabel('')
+        .dimension(scatterplot_dimension)
+        .group(scatterplot_group)
+        .margins({
+            top: 30,
+            left: 70,
+            bottom: 70,
+            right: 20
+        })
+        .transitionDuration(500)
 }
