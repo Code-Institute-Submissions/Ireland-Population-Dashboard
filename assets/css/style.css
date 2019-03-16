@@ -3,7 +3,7 @@
     height: auto;
     margin-left:10%;
 }
-#stack_chart,#scatterplot{
+#stack_chart,#bar_chart{
     width: 100%;
     height: auto;
 }

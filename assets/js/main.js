@@ -22,7 +22,7 @@ function makeGraphs(error, data) {
     show_country_chart(ndx);
     show_county_chart(ndx);
     show_stack_chart(ndx);
-    show_scatterplot(ndx);
+    show_bar_chart(ndx);
 
     dc.renderAll();
 }
@@ -90,51 +90,51 @@ function show_stack_chart(ndx) {
         .yAxisLabel('Population')
         .yAxis().ticks(7);
 }
-
-function show_scatterplot(ndx) {
-
-    let pop_dim = ndx.dimension(dc.pluck('tot_population'))
-    let scatterplot_dimension = ndx.dimension(function(d){ 
-       return [d.tot_population,d.density, d.cou;
-    });
-    let scatterplot_group = scatterplot_dimension.group();
-
-    // x linear has to be for tot_population otherwise gruops number
-    // for density I have write function which will add density numbers in county and later on divide 
-
-
-
-
-    var pop_min = pop_dim.bottom(1)[0].tot_population;
-    var pop_max = pop_dim.top(1)[0].tot_population;
-
-    dc.scatterPlot('#scatterplot')
+function show_bar_chart(ndx) {
+    let county_dim = ndx.dimension(dc.pluck('county'));
+    let average_density = county_dim.group().reduce(
+        function(p,v){
+            p.count ++;
+            p.total += v.density;
+            p.average = p.total / p.count;
+            return p;
+        },
+        function (p, v) {
+            p.cunt--;
+            if(p.count == 0) {
+                p.total = 0;
+                p.average = 0;
+            } else {
+                p.total -= v.density;
+                p.average = p.total /p.count;
+            }
+            return p;
+        },
+        function(){
+            return { count: 0, total:0,average:0};
+        }
+    );
+  
+    console.log(average_density.all())
+    dc.barChart('#bar_chart')
         .width(1000)
         .height(350)
-        .x(d3.scale.linear().domain([pop_min, pop_max]))
-        .symbolSize(8)
-        .clipPadding(20)
-        .title(function (d) {
-            return (
-                'In  ' +
-                d.key[0] + " " +
-                d.key[2] +
-                ' density was ' +
-                d.key[1]
-            );
-        })
-        .useViewBoxResizing(true)
-        .brushOn(false)
-        .elasticY(true)
-        .yAxisLabel('')
-        .xAxisLabel('')
-        .dimension(scatterplot_dimension)
-        .group(scatterplot_group)
+        .dimension(county_dim)
+        .group(average_density)
+        .valueAccessor(function (d) { return d.value.average})
+        .transitionDuration(500)
+        .x(d3.scale.ordinal())
         .margins({
             top: 30,
             left: 70,
-            bottom: 70,
+           bottom: 70,
             right: 20
         })
-        .transitionDuration(500)
+        .useViewBoxResizing(true)
+        .xUnits(dc.units.ordinal)
+        .elasticY(true)
+        .xAxisLabel('Counties')
+        .yAxisLabel('Population')
+        .yAxis().ticks(7);
 }
+
