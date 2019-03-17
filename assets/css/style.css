@@ -4,7 +4,6 @@
 
  #showcase{
     margin:0;
-
     background: linear-gradient(rgba(247, 247, 247, 0.2),
         rgba(255, 255, 255, 0.2)), url("../img/cliffs.jpg");
     background-position: center;
@@ -12,6 +11,14 @@
     background-repeat: no-repeat;
     width: 100%;
     height: 100vh;
+    padding-top: 150px;
+    box-sizing: border-box;
+}
+#info{
+    text-align: center;
+    width: 50%;
+    background: rgba(247, 247, 247, 0.5);
+    padding:50px;
 }
 main header,#charts{
     width: 100%;
@@ -27,13 +34,13 @@ main header,#charts{
 .charts_box, .selector{
     width: 25% ;
     height: auto;
-
 }
 section,main header{
     padding: 20px 0;
 }
 h2{
     font-size: 20px;
+    margin-bottom: 30px;
     
 }
 #population{
