@@ -26,6 +26,7 @@ function makeGraphs(error, data) {
     show_total_display(ndx);
     show_male_display(ndx);
     show_female_display(ndx);
+    show_selectors(ndx);
 
     dc.renderAll();
 }
@@ -241,4 +242,26 @@ function show_female_display(ndx) {
     .valueAccessor(function (d) {
         return d.total;
     });
+}
+function show_selectors(ndx){
+/****************************************** Country Selector */
+    let country_dim = ndx.dimension(dc.pluck('country'));
+    let country_group = country_dim.group();
+    dc.selectMenu('#country_selector')
+    .dimension(country_dim)
+    .group(country_group)
+    .title(function (d) {
+        return d.key;
+    })
+    .promptText("Choose a Country");
+
+    let county_dim = ndx.dimension(dc.pluck('county'));
+    let county_group = county_dim.group();
+    dc.selectMenu('#county_selector')
+    .dimension(county_dim)
+    .group(county_group)
+    .title(function (d) {
+        return d.key;
+    })
+    .promptText("Choose a County");
 }

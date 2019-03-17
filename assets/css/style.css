@@ -1,24 +1,26 @@
 
-#charts{
-    width: 100vw;
+main header,#charts{
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
 }
+
 .dc-chart{
     width:100%;
-}
-.charts_box{
-    width: 30% ;
-    height: auto;
-
-}
-h2{
-    font-size: 20px;
     text-align: center;
 }
+.charts_box, .selector{
+    width: 25% ;
+    height: auto;
+}
+
+h2{
+    font-size: 20px;
+    
+}
 #population{
-    float: left;
+    text-align: center;
 }
 #stack_chart,#bar_chart{
     width: 100%;
