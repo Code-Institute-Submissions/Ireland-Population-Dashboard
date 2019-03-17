@@ -1,9 +1,30 @@
-.small{
-    width: 20% ;
+
+#charts{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.dc-chart{
+    width:100%;
+}
+.charts_box{
+    width: 30% ;
     height: auto;
-    margin-left:10%;
+
+}
+h2{
+    font-size: 20px;
+    text-align: center;
+}
+#population{
+    float: left;
 }
 #stack_chart,#bar_chart{
     width: 100%;
     height: auto;
+}
+svg .x text{
+    transform: rotate(-90deg) translate(-40px,-10px);
+    
 }

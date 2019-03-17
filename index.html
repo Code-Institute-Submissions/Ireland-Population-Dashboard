@@ -11,7 +11,7 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
-    
+
 </head>
 
 <body>
@@ -19,14 +19,31 @@
         <div id="info"></div>
     </header>
     <main>
-        <section id="pie_charts">
-            <div id="country_chart" class="box small"></div>
-            <div id="county_chart" class="box small"></div>
-            <div id="population_info" class="box small"></div>
+        <section id="charts">
+            <div class="charts_box">
+                <div id="country_chart"></div>
+            </div>
+            <div class="charts_box">
+                <div id="county_chart"></div>
+            </div>
+            <div class="charts_box">
+                <div id="population">
+                    <div class="population_total">
+                        <h2>Total population: <span id="total"></span></h2>
+                    </div>
+                    <div class="population_male"><i class="fas fa-male"></i><span id="male"></span></div>
+                    <div class="population_female"><i class="fas fa-female"></i><span id="female"></span></div>
+
+                </div>
+            </div>
         </section>
         <section id="graphs">
-            <div id="stack_chart"></div>
-            <div id="bar_chart"></div>
+            <div class="graphs_box">
+                <div id="stack_chart"></div>
+            </div>
+            <div class="graphs_box">
+                <div id="bar_chart"></div>
+            </div>
         </section>
     </main>
     <footer>

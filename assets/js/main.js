@@ -23,6 +23,9 @@ function makeGraphs(error, data) {
     show_county_chart(ndx);
     show_stack_chart(ndx);
     show_bar_chart(ndx);
+    show_total_display(ndx);
+    show_male_display(ndx);
+    show_female_display(ndx);
 
     dc.renderAll();
 }
@@ -79,7 +82,7 @@ function show_stack_chart(ndx) {
         .margins({
             top: 30,
             left: 70,
-           bottom: 70,
+            bottom: 70,
             right: 20
         })
         .legend(dc.legend().x(720).y(20).itemHeight(15).gap(5))
@@ -90,51 +93,152 @@ function show_stack_chart(ndx) {
         .yAxisLabel('Population')
         .yAxis().ticks(7);
 }
+
 function show_bar_chart(ndx) {
     let county_dim = ndx.dimension(dc.pluck('county'));
     let average_density = county_dim.group().reduce(
-        function(p,v){
-            p.count ++;
+        function (p, v) {
+            p.count++;
             p.total += v.density;
             p.average = p.total / p.count;
             return p;
         },
         function (p, v) {
             p.cunt--;
-            if(p.count == 0) {
+            if (p.count == 0) {
                 p.total = 0;
                 p.average = 0;
             } else {
                 p.total -= v.density;
-                p.average = p.total /p.count;
+                p.average = p.total / p.count;
             }
             return p;
         },
-        function(){
-            return { count: 0, total:0,average:0};
+        function () {
+            return {
+                count: 0,
+                total: 0,
+                average: 0
+            };
         }
     );
-  
-    console.log(average_density.all())
+
+
     dc.barChart('#bar_chart')
         .width(1000)
         .height(350)
         .dimension(county_dim)
         .group(average_density)
-        .valueAccessor(function (d) { return d.value.average})
+        .valueAccessor(function (d) {
+            return d.value.average
+        })
         .transitionDuration(500)
         .x(d3.scale.ordinal())
         .margins({
             top: 30,
             left: 70,
-           bottom: 70,
+            bottom: 70,
             right: 20
         })
         .useViewBoxResizing(true)
         .xUnits(dc.units.ordinal)
         .elasticY(true)
         .xAxisLabel('Counties')
-        .yAxisLabel('Population')
+        .yAxisLabel('Density')
         .yAxis().ticks(7);
 }
 
+function show_total_display(ndx) {
+    let population = ndx.groupAll().reduce(
+        function (p, v) {
+            if (v.tot_population > 0) {
+                p.total += v.tot_population;
+            }
+
+            return p;
+        },
+        function (p, v) {
+            if (v.tot_population > 0) {
+                p.total -= v.tot_population;
+            }
+
+            return p;
+        },
+        function () {
+            return {
+                total: 0
+            };
+        }
+    );
+
+    dc.numberDisplay("#total")
+        .group(population)
+        .transitionDuration(500)
+        .formatNumber(d3.format(",f"))
+        .valueAccessor(function (d) {
+            return d.total;
+        });
+
+
+}
+
+function show_male_display(ndx) {
+    let male = ndx.groupAll().reduce(
+        function (p, v) {
+            if (v.male_population > 0) {
+                p.total += v.male_population;
+            }
+
+            return p;
+        },
+        function (p, v) {
+            if (v.tot_population > 0) {
+                p.total -= v.male_population;
+            }
+
+            return p;
+        },
+        function () {
+            return {
+                total: 0
+            };
+        }
+    );
+    dc.numberDisplay("#male")
+    .group(male)
+    .transitionDuration(500)
+    .formatNumber(d3.format(",f"))
+    .valueAccessor(function (d) {
+        return d.total;
+    });
+}
+function show_female_display(ndx) {
+    let female = ndx.groupAll().reduce(
+        function (p, v) {
+            if (v.male_population > 0) {
+                p.total += v.female_population;
+            }
+
+            return p;
+        },
+        function (p, v) {
+            if (v.tot_population > 0) {
+                p.total -= v.female_population;
+            }
+
+            return p;
+        },
+        function () {
+            return {
+                total: 0
+            };
+        }
+    );
+    dc.numberDisplay("#female")
+    .group(female)
+    .transitionDuration(500)
+    .formatNumber(d3.format(",f"))
+    .valueAccessor(function (d) {
+        return d.total;
+    });
+}
