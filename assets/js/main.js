@@ -265,3 +265,11 @@ function show_selectors(ndx){
     })
     .promptText("Choose a County");
 }
+function scroll(){
+    AOS.init();
+    $('#down_btn').on('click', function(e) {
+        $('html, body').animate({
+            scrollTop: $(window).height()
+        }, 1200);
+    });
+}

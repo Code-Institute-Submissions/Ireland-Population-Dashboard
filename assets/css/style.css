@@ -1,56 +1,95 @@
- *{
-     margin:0 auto;
+ /*********************** General *****************/
+
+ * {
+     margin: 0 auto;
  }
 
- #showcase{
-    margin:0;
-    background: linear-gradient(rgba(247, 247, 247, 0.2),
-        rgba(255, 255, 255, 0.2)), url("../img/cliffs.jpg");
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 100vh;
-    padding-top: 150px;
-    box-sizing: border-box;
-}
-#info{
-    text-align: center;
-    width: 50%;
-    background: rgba(247, 247, 247, 0.5);
-    padding:50px;
-}
-main header,#charts{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-}
+ /* image link: https://handluggageonly.co.uk/wp-content/uploads/2018/02/Best-Hikes-In-Ireland-You-Have-To-Walk.jpg */
 
-.dc-chart{
-    width:100%;
-    text-align: center;
-}
-.charts_box, .selector{
-    width: 25% ;
-    height: auto;
-}
-section,main header{
-    padding: 20px 0;
-}
-h2{
-    font-size: 20px;
-    margin-bottom: 30px;
-    
-}
-#population{
-    text-align: center;
-}
-#stack_chart,#bar_chart{
-    width: 100%;
-    height: auto;
-}
-svg .x text{
-    transform: rotate(-90deg) translate(-40px,-10px);
-    
-}
+ /*********************** Showcase *****************/
+ #showcase {
+     margin: 0;
+     background: linear-gradient(rgba(247, 247, 247, 0.2),
+         rgba(255, 255, 255, 0.2)), url("../img/cliffs.jpg");
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+     width: 100%;
+     height: 100vh;
+     box-sizing: border-box;
+ }
+
+ #info {
+     top: 20%;
+     position: relative;
+     text-align: center;
+     width: 60%;
+     background: rgba(247, 247, 247, 0.5);
+     padding: 40px 50px 5px 50px;
+ }
+
+ /*********************** Pie charts *****************/
+
+ main header,
+ #charts {
+     width: 100%;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-around;
+ }
+
+ .dc-chart {
+     width: 100%;
+     text-align: center;
+ }
+
+ .charts_box,
+ .selector {
+     width: 20%;
+     height: auto;
+     text-align: center;
+ }
+
+ section,
+ main header {
+     padding: 20px 0;
+ }
+
+ h2 {
+     font-size: 20px;
+     margin-bottom: 30px;
+ }
+
+ .big_font {
+     font-size: 40px;
+     margin-bottom: 10px;
+ }
+
+ i {
+     margin-right: 15px;
+ }
+
+ .population_male_box {
+     color: blue;
+ }
+
+ .population_female_box {
+     color: rgb(247, 34, 133);
+ }
+ .gender_population_box{
+     margin-top: 40px;
+ }
+
+
+ /*********************** Graphs *****************/
+
+ #stack_chart,
+ #bar_chart {
+     width: 100%;
+     height: auto;
+ }
+
+ svg .x text {
+     transform: rotate(-90deg) translate(-40px, -10px);
+
+ }

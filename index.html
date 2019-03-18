@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Population in Ireland</title>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
@@ -18,16 +19,21 @@
     <header id="showcase">
         <div id="info">
             <h2>Ireland Population</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam error ratione adipisci id nobis pariatur magni alias dolorum saepe harum officiis aliquid odio, iure minus, non eos veniam assumenda vero magnam enim necessitatibus mollitia sed a? Accusamus natus pariatur temporibus fugit dolorem totam necessitatibus modi veniam, voluptatum, delectus magnam accusantium?</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam error ratione adipisci id nobis pariatur
+                magni alias dolorum saepe harum officiis aliquid odio, iure minus, non eos veniam assumenda vero magnam
+                enim necessitatibus mollitia sed a? Accusamus natus pariatur temporibus fugit dolorem totam
+                necessitatibus modi veniam, voluptatum, delectus magnam accusantium?</p>
+            <a class="btn" id="down_btn" href="#country_selector"><i class="fas fa-arrow-down"></i></a>
+
         </div>
         <div class="arrow"></div>
     </header>
     <main>
         <header>
-            <div class="selector" >
+            <div class="selector">
                 <div id="country_selector"></div>
             </div>
-            <div class="selector" >
+            <div class="selector">
                 <div id="county_selector"></div>
             </div>
             <button class="selector">Reset</button>
@@ -40,12 +46,15 @@
                 <div id="county_chart"></div>
             </div>
             <div class="charts_box">
-                <div id="population">
-                    <div class="population_total">
-                        <h2>Total population: <span id="total"></span></h2>
+                <div id="population_box">
+                    <div class="total_population_box">
+                        <h2>Total population:  </h2>
+                        <p id="total" class="big_font"></p>
                     </div>
-                    <div class="population_male"><i class="fas fa-male"></i><span id="male"></span></div>
-                    <div class="population_female"><i class="fas fa-female"></i><span id="female"></span></div>
+                    <div class="gender_population_box">
+                        <div class="population_male_box big_font"><i class="fas fa-male "></i><span id="male"></span></div>
+                        <div class="population_female_box big_font"><i class="fas fa-female "></i><span id="female"></span></div>
+                    </div>
 
                 </div>
             </div>
@@ -69,6 +78,8 @@
     <!--******************************************* Scripts ***************************************-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
         crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
