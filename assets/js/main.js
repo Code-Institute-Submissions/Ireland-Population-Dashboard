@@ -83,7 +83,7 @@ function show_stack_chart(ndx) {
         .margins({
             top: 30,
             left: 70,
-            bottom: 70,
+            bottom: 100,
             right: 20
         })
         .legend(dc.legend().x(920).y(5).itemHeight(15).gap(5))
@@ -138,7 +138,7 @@ function show_bar_chart(ndx) {
         .margins({
             top: 30,
             left: 70,
-            bottom: 70,
+            bottom: 100,
             right: 20
         })
         .useViewBoxResizing(true)
