@@ -159,7 +159,8 @@
  }
 
  .gender_population_box {
-     margin-top: 40px;
+     margin-top: 50px;
+    
  }
 
 
@@ -196,6 +197,9 @@
  }
 
  @media (min-width:768px) {
+    .big_font {
+        font-size: 35px;
+    }
      #info {
          top: 30%;
          font-size: 16px;
