@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Population in Ireland</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Lilita+One" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
@@ -42,13 +42,16 @@
             <div class="selector">
                 <div id="county_selector"></div>
             </div>
-            <button class="selector">Reset</button>
+           <a class="reset selector" href="javascript:dc.filterAll(); dc.renderAll();"> <button > Reset</button></a>
         </header>
         <section id="charts">
             <div class="charts_box">
+                <h2>Population by Countries</h2>
                 <div id="country_chart"></div>
             </div>
             <div class="charts_box">
+                    <h2>Population by Counties</h2>
+
                 <div id="county_chart"></div>
             </div>
             <div class="charts_box">
@@ -82,14 +85,11 @@
 
 
     <!--******************************************* Scripts ***************************************-->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.js" integrity="sha256-fNXJFIlca05BIO2Y5zh1xrShK3ME+/lYZ0j+ChxX2DA="
-        crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.12/crossfilter.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/queue-async/1.0.7/queue.min.js"></script>
+    <script src="assets/js/jquery.js"></script>  
+    <script src="assets/js/d3.js"></script>
+    <script src="assets/js/crossfilter.js"></script>
+    <script src="assets/js/dc.js"></script>
+    <script src="assets/js/queue.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 

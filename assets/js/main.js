@@ -86,7 +86,7 @@ function show_stack_chart(ndx) {
             bottom: 70,
             right: 20
         })
-        .legend(dc.legend().x(720).y(20).itemHeight(15).gap(5))
+        .legend(dc.legend().x(920).y(5).itemHeight(15).gap(5))
         .useViewBoxResizing(true)
         .xUnits(dc.units.ordinal)
         .elasticY(true)
@@ -253,7 +253,7 @@ function show_selectors(ndx){
     .title(function (d) {
         return d.key;
     })
-    .promptText("Choose a Country");
+    .promptText("Select Country");
 
     let county_dim = ndx.dimension(dc.pluck('county'));
     let county_group = county_dim.group();
@@ -263,7 +263,7 @@ function show_selectors(ndx){
     .title(function (d) {
         return d.key;
     })
-    .promptText("Choose a County");
+    .promptText("Select County");
 }
 function scroll(){
     AOS.init();

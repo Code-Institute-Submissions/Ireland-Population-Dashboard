@@ -2,8 +2,24 @@
 
  * {
      margin: 0 auto;
-     font-family: 'Lato', sans-serif;
      scroll-behavior: smooth;
+ }
+
+ body {
+     min-width: 320px;
+     font-family: 'Lato', sans-serif;
+ }
+
+ h1,
+ h2 {
+     margin-bottom: 20px;
+ }
+
+ .big_font {
+     font-size: 30px;
+     margin-bottom: 10px;
+     font-family: 'Lilita One', cursive;
+
  }
 
  /* image link: https://handluggageonly.co.uk/wp-content/uploads/2018/02/Best-Hikes-In-Ireland-You-Have-To-Walk.jpg */
@@ -23,20 +39,24 @@
  }
 
  #info {
-     top: 20%;
+     font-size: 12px;
+     top: 10%;
      position: relative;
      text-align: center;
-     width: 60%;
+     width: 70%;
      background: rgba(247, 247, 247, 0.5);
-     padding: 40px 50px 5px 50px;
+     padding: 30px 40px 5px 40px;
+     box-sizing: border-box;
  }
- .btn i{
+
+ .btn i {
      font-size: 25px;
      height: 50px;
      margin-top: 20px;
      width: 100px;
      animation: pulse 2s infinite;
-     color: blue;
+     color: rgb(55, 174, 211);
+     text-shadow: 0 0 1px #000;
  }
 
  /*********************** Pie charts *****************/
@@ -49,30 +69,66 @@
      justify-content: space-around;
  }
 
+ #charts {
+     flex-direction: column-reverse
+ }
+
+ .charts_box {
+     width: 70%;
+     margin: 20px auto;
+     height: auto;
+     padding-bottom: 30px;
+     text-align: center;
+     padding: 20px;
+     transition: all 400ms ease-in-out;
+ }
+
+ .charts_box:hover {
+     box-shadow: 0 0 25px rgb(55, 174, 211);
+ }
+
  .dc-chart {
      width: 100%;
      text-align: center;
  }
 
- .charts_box,
  .selector {
-     width: 20%;
+     width: 30%;
      height: auto;
      text-align: center;
+ }
+
+ select {
+     width: 100%;
+     font-size: 12px;
+     border-radius: 5px;
+ }
+
+ button {
+     width: 100%;
+     outline: none;
+     border: none;
+     cursor: pointer;
+     margin: 0 auto;
+     color: white;
+     padding: 5px;
+     font-size: 12px;
+     letter-spacing: 2px;
+     border-radius: 12px;
+     text-transform: uppercase;
+     transition: all 100ms ease-in-out;
+     background-color: rgb(55, 174, 211);
+     box-shadow: 0px 15px 15px -8px rgb(55, 174, 211);
+ }
+
+ button:active {
+     transform: translateY(5px) scale(0.9);
+     box-shadow: none;
  }
 
  section,
  main header {
      padding: 20px 0;
- }
-h1,h2{
-    margin-bottom: 30px;
-}
-
-
- .big_font {
-     font-size: 40px;
-     margin-bottom: 10px;
  }
 
  i {
@@ -86,33 +142,55 @@ h1,h2{
  .population_female_box {
      color: rgb(247, 34, 133);
  }
- .gender_population_box{
+
+ .gender_population_box {
      margin-top: 40px;
+
  }
 
 
  /*********************** Graphs *****************/
 
- #stack_chart,
- #bar_chart {
-     width: 100%;
+ .graphs_box {
+     width: 95%;
      height: auto;
  }
 
  svg .x text {
      transform: rotate(-90deg) translate(-40px, -10px);
-
  }
- @media (min-width:){}
+
+
+ @media (min-width:576px) {
+     #info {
+         top: 30%;
+         font-size: 16px;
+     }
+
+     #charts {
+         flex-direction: row;
+
+     }
+ }
+
+ @media (orientation : landscape) {
+     #info {
+         top: 10%;
+         width: 70%;
+         font-size: 12px;
+     }
+ }
 
  @keyframes pulse {
-    0% {
-        transform: translate(0,0);
-    }
-    50% {
-        transform: translate(0,10px);
-    }
-    100% {
-        transform: translate(0,0);
-    }
+     0% {
+         transform: translate(0, 0);
+     }
+
+     50% {
+         transform: translate(0, 10px);
+     }
+
+     100% {
+         transform: translate(0, 0);
+     }
  }
