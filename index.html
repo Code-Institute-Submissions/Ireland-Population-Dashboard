@@ -8,8 +8,8 @@
     <title>Population in Ireland</title>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Lilita+One" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
-        crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+        integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dc/2.1.8/dc.min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css">
 
@@ -22,12 +22,14 @@
             <p>This page contains data from the
                 census unit at the CSO and the Northern Ireland Research and Statistics Agency (NISRA). This data was
                 developed under the Evidence Based Planning theme of the Ireland Northern Cross Border Cooperation
-                Observatory (INICCO-2) and CrosSPlaN-2 funded research programme. The web page includes data on Population,
+                Observatory (INICCO-2) and CrosSPlaN-2 funded research programme. The web page includes data on
+                Population,
                 Gender and Age-groups within the County Areas in the Republic of Ireland and Northern Ireland.
-                For more information on the original data source please see <a href="http://airo.maynoothuniversity.ie/"  target="_blank">AIRO</a>,
-                <a href="http://www.cso.ie/en/index.html"  target="_blank"> CSO</a> and
-                <a href="http://www.nisra.gov.uk/"  target="_blank">NISRA</a>  
-                
+                For more information on the original data source please see <a href="http://airo.maynoothuniversity.ie/"
+                    target="_blank">AIRO</a>,
+                <a href="http://www.cso.ie/en/index.html" target="_blank"> CSO</a> and
+                <a href="http://www.nisra.gov.uk/" target="_blank">NISRA</a>
+
             </p>
             <a class="btn" href="#selectors"><i class="fas fa-arrow-down"></i></a>
 
@@ -42,15 +44,15 @@
             <div class="selector">
                 <div id="county_selector"></div>
             </div>
-           <a class="reset selector" href="javascript:dc.filterAll(); dc.renderAll();"> <button > Reset</button></a>
+            <a class="reset selector" href="javascript:dc.filterAll(); dc.renderAll();"> <button> Reset</button></a>
         </header>
         <section id="charts">
             <div class="charts_box">
-                <h2>Population by Countries</h2>
+                <h2>Population by Country</h2>
                 <div id="country_chart"></div>
             </div>
             <div class="charts_box">
-                    <h2>Population by Counties</h2>
+                <h2>Population by County</h2>
 
                 <div id="county_chart"></div>
             </div>
@@ -61,8 +63,10 @@
                         <p id="total" class="big_font"></p>
                     </div>
                     <div class="gender_population_box">
-                        <div class="population_male_box big_font"><i class="fas fa-male "></i><span id="male"></span></div>
-                        <div class="population_female_box big_font"><i class="fas fa-female "></i><span id="female"></span></div>
+                        <div class="population_male_box big_font"><i class="fas fa-male "></i><span id="male"></span>
+                        </div>
+                        <div class="population_female_box big_font"><i class="fas fa-female "></i><span
+                                id="female"></span></div>
                     </div>
 
                 </div>
@@ -70,22 +74,32 @@
         </section>
         <section id="graphs">
             <div class="graphs_box">
-                <div id="stack_chart"> <h2>Age groups by County</h2></div>
+                <div id="stack_chart">
+                    <h2>Age groups by County</h2>
+                </div>
             </div>
             <div class="graphs_box">
-                <div id="bar_chart"> <h2>Density by Counties</h2></div>
+                <div id="bar_chart">
+                    <h2>Density by County</h2>
+                </div>
             </div>
         </section>
     </main>
     <footer>
-
+        <div class="footer_copyrights">
+                <p>Copyright &copy;  2019 Lukasz Plawinski</p>
+                <a href=""><i class="fab fa-github-alt"></i></a> 
+                <a href=""><i class="fab fa-linkedin-in"></i></a> 
+        </div>
+       
+        
     </footer>
 
 
 
-     
+
     <!--******************************************* Scripts ***************************************-->
-    <script src="assets/js/jquery.js"></script>  
+    <script src="assets/js/jquery.js"></script>
     <script src="assets/js/d3.js"></script>
     <script src="assets/js/crossfilter.js"></script>
     <script src="assets/js/dc.js"></script>
