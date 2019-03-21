@@ -18,6 +18,7 @@ queue()
     .await(makeGraphs);
 
 function makeGraphs(error, data) {
+    orientation_info();
     var ndx = crossfilter(data);
     show_country_chart(ndx);
     show_county_chart(ndx);
@@ -30,8 +31,14 @@ function makeGraphs(error, data) {
 
     dc.renderAll();
 }
+function orientation_info(){
+    if (window.matchMedia("(orientation: portrait)").matches) {
+        alert('Please use landscape mode for better experience ');
+     }
+};
+let colors = ['#56AEE2', '#56E2CF','#f9ed69','#f08a5d','#b83b5e','#6a2c70','#56E289', '#68E256', '#AEE256', '#E2CF56', '#E28956', '#E28956', '#E256AE', '#CF56E2', '#8A56E2', '#8A56E2','#5668E2', '#364f6b','#3fc1c9','#fc5185','#ff8484','#d84c73','#5c3b6f']
 
-/***********************************************  Sex Pie Chart */
+/***********************************************  Country Pie Chart */
 
 function show_country_chart(ndx) {
     let countries_dim = ndx.dimension(dc.pluck('country'));
@@ -40,6 +47,7 @@ function show_country_chart(ndx) {
     dc.pieChart('#country_chart')
         .width(150)
         .height(150)
+        .colors(d3.scale.ordinal().range(colors))
         .useViewBoxResizing(true)
         .transitionDuration(500)
         .dimension(countries_dim)
@@ -55,6 +63,7 @@ function show_county_chart(ndx) {
     dc.pieChart('#county_chart')
         .width(150)
         .height(150)
+        .colors(d3.scale.ordinal().range(colors))
         .useViewBoxResizing(true)
         .transitionDuration(500)
         .dimension(county_dim)
@@ -72,6 +81,7 @@ function show_stack_chart(ndx) {
     dc.barChart('#stack_chart')
         .width(1000)
         .height(350)
+        .colors(d3.scale.ordinal().range(colors))
         .dimension(county_dim)
         .group(age_one, '0 to 14')
         .stack(age_two, '14 to 24')
@@ -128,6 +138,7 @@ function show_bar_chart(ndx) {
     dc.barChart('#bar_chart')
         .width(1000)
         .height(350)
+        .colors(d3.scale.ordinal().range(colors))
         .dimension(county_dim)
         .group(average_density)
         .valueAccessor(function (d) {
@@ -206,13 +217,14 @@ function show_male_display(ndx) {
         }
     );
     dc.numberDisplay("#male")
-    .group(male)
-    .transitionDuration(500)
-    .formatNumber(d3.format(",f"))
-    .valueAccessor(function (d) {
-        return d.total;
-    });
+        .group(male)
+        .transitionDuration(500)
+        .formatNumber(d3.format(",f"))
+        .valueAccessor(function (d) {
+            return d.total;
+        });
 }
+
 function show_female_display(ndx) {
     let female = ndx.groupAll().reduce(
         function (p, v) {
@@ -236,38 +248,40 @@ function show_female_display(ndx) {
         }
     );
     dc.numberDisplay("#female")
-    .group(female)
-    .transitionDuration(500)
-    .formatNumber(d3.format(",f"))
-    .valueAccessor(function (d) {
-        return d.total;
-    });
+        .group(female)
+        .transitionDuration(500)
+        .formatNumber(d3.format(",f"))
+        .valueAccessor(function (d) {
+            return d.total;
+        });
 }
-function show_selectors(ndx){
-/****************************************** Country Selector */
+
+function show_selectors(ndx) {
+    /****************************************** Country Selector */
     let country_dim = ndx.dimension(dc.pluck('country'));
     let country_group = country_dim.group();
     dc.selectMenu('#country_selector')
-    .dimension(country_dim)
-    .group(country_group)
-    .title(function (d) {
-        return d.key;
-    })
-    .promptText("Select Country");
+        .dimension(country_dim)
+        .group(country_group)
+        .title(function (d) {
+            return d.key;
+        })
+        .promptText("Select Country");
 
     let county_dim = ndx.dimension(dc.pluck('county'));
     let county_group = county_dim.group();
     dc.selectMenu('#county_selector')
-    .dimension(county_dim)
-    .group(county_group)
-    .title(function (d) {
-        return d.key;
-    })
-    .promptText("Select County");
+        .dimension(county_dim)
+        .group(county_group)
+        .title(function (d) {
+            return d.key;
+        })
+        .promptText("Select County");
 }
-function scroll(){
+
+function scroll() {
     AOS.init();
-    $('#down_btn').on('click', function(e) {
+    $('#down_btn').on('click', function (e) {
         $('html, body').animate({
             scrollTop: $(window).height()
         }, 1200);
