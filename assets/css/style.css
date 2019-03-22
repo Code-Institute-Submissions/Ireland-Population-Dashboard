@@ -111,7 +111,7 @@
 
  select {
      width: 100%;
-     font-size: 15px;
+     font-size: 12px;
      border-radius: 5px;
      text-align: center;
  }
@@ -138,7 +138,7 @@
      box-shadow: none;
  }
 
- i {
+ .population_box i {
      margin-right: 15px;
  }
 
@@ -176,8 +176,37 @@
  }
 
  svg .x text {
-     transform: rotate(-90deg) translate(-50px, -10px);
+     transform: rotate(-90deg) translate(-50px, -12px);
  }
+
+ .float_btn{
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    border-radius: 50%;
+    position: fixed;
+    right: 15px;
+    bottom: 10px;
+    background-color: rgba(247, 247, 247, 0.7);
+    text-align: center;
+    color: rgb(55, 174, 211);
+    transition: all 100ms ease-in-out;
+    border: 1px solid rgb(55, 174, 211);
+
+}
+.float_btn:active{
+    transform: scale(0.8);
+}
+.float_btn:hover{
+    background-color: rgb(55, 174, 211);
+    color: rgba(247, 247, 247, 0.8);
+}
+#top_btn{
+    bottom:70px;
+}
+.float_btn i{
+    margin-top:13px;
+}
  /*********************** Footer *****************/
  #graphs{
     display: flex;

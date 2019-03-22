@@ -100,9 +100,9 @@ function show_stack_chart(ndx) {
         .useViewBoxResizing(true)
         .xUnits(dc.units.ordinal)
         .elasticY(true)
-        .xAxisLabel('Counties')
+        .xAxisLabel('County')
         .yAxisLabel('Population')
-        .yAxis().ticks(7);
+        .yAxis().ticks(9);
 }
 
 function show_bar_chart(ndx) {
@@ -155,9 +155,9 @@ function show_bar_chart(ndx) {
         .useViewBoxResizing(true)
         .xUnits(dc.units.ordinal)
         .elasticY(true)
-        .xAxisLabel('Counties')
+        .xAxisLabel('County')
         .yAxisLabel('Density')
-        .yAxis().ticks(7);
+        .yAxis().ticks(9);
 }
 
 function show_total_display(ndx) {
