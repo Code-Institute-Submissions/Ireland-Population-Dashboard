@@ -16,7 +16,7 @@
  }
 
  .big_font {
-     font-size: 30px;
+     font-size: 25px;
      margin-bottom: 10px;
      font-family: 'Lilita One', cursive;
 
@@ -111,7 +111,7 @@
 
  select {
      width: 100%;
-     font-size: 16px;
+     font-size: 15px;
      border-radius: 5px;
      text-align: center;
  }
