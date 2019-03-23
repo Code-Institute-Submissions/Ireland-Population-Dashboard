@@ -1,4 +1,5 @@
 # Ireland Population Dashboard
+![alt text](https://github.com/LukaszPlawinski/Ireland-Population-Dashboard/blob/master/assets/img/thumbnail.png)
 
 I designed this website for people who are looking for more informations and about Ireland such us population, density etc.
 They can choose county as well.  All information are showed in the most understandable and clear way by graphs and pie charts. Dashboard is Mobile First Designed.
