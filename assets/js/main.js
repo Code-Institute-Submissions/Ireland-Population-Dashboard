@@ -18,6 +18,7 @@ queue()
     .await(makeGraphs);
 
 function makeGraphs(error, data) {
+    show_float_buttons();
     orientation_info();
     var ndx = crossfilter(data);
     show_country_chart(ndx);
@@ -279,11 +280,13 @@ function show_selectors(ndx) {
         .promptText("Select County");
 }
 
-function scroll() {
-    AOS.init();
-    $('#down_btn').on('click', function (e) {
-        $('html, body').animate({
-            scrollTop: $(window).height()
-        }, 1200);
-    });
+function show_float_buttons(){
+    $(window).scroll(function () {
+			if ($(window).scrollTop() > 400) {
+				$('.float_btn').addClass('visible');
+			} else {
+				$('.float_btn').removeClass('visible');
+			}
+		
+	});
 }

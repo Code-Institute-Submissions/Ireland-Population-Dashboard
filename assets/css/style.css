@@ -46,7 +46,7 @@
      text-align: center;
      width: 70%;
      background: rgba(247, 247, 247, 0.5);
-     padding: 20px 30px 5px 30px;
+     padding: 20px 25px 5px 25px;
      box-sizing: border-box;
  }
 
@@ -137,8 +137,11 @@
      transform: translateY(5px) scale(0.9);
      box-shadow: none;
  }
+ .gender_population_box {
+    margin-top: 50px;
+}
 
- .population_box i {
+ #population_box i {
      margin-right: 15px;
  }
 
@@ -150,10 +153,7 @@
      color: rgb(247, 34, 133);
  }
 
- .gender_population_box {
-     margin-top: 50px;
-
- }
+ 
 
 
 
@@ -180,6 +180,7 @@
  }
 
  .float_btn{
+    visibility: hidden;
     width: 50px;
     height: 50px;
     font-size: 25px;
@@ -187,12 +188,14 @@
     position: fixed;
     right: 15px;
     bottom: 10px;
-    background-color: rgba(247, 247, 247, 0.7);
+    background-color: rgba(247, 247, 247, 0.5);
     text-align: center;
     color: rgb(55, 174, 211);
     transition: all 100ms ease-in-out;
     border: 1px solid rgb(55, 174, 211);
-
+}
+.visible{
+    visibility: visible;
 }
 .float_btn:active{
     transform: scale(0.8);
@@ -269,7 +272,10 @@ footer i:hover {
 
  @media (min-width:768px) {
      .big_font {
-         font-size: 35px;
+         font-size: 36px;
+     }
+     select{
+         font-size: 16px;
      }
 
      #info {
@@ -278,6 +284,14 @@ footer i:hover {
          word-spacing: 2px;
 
      }
+ }
+ @media (min-width:992px){
+    .big_font {
+        font-size: 46px;
+    }
+    .gender_population_box {
+        margin-top: 70px;
+    }
  }
 
  @keyframes pulse {
