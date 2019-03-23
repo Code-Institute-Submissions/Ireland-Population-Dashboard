@@ -1,10 +1,26 @@
+/*
+1.  General
+2.  Showcase
+3.  Pie charts
+4.  Selectors
+5.  Population number  box
+6.  Graphs
+7.  Float buttons
+8.  Footer
+9.  Media queries
+10. Keyframes
+*/
+ 
+ 
+
+ 
  /*********************** General *****************/
 
  * {
      margin: 0 auto;
      scroll-behavior: smooth;
  }
- 
+
  body {
      min-width: 320px;
      font-family: 'Lato', sans-serif;
@@ -22,7 +38,6 @@
 
  }
 
- /* image link: https://handluggageonly.co.uk/wp-content/uploads/2018/02/Best-Hikes-In-Ireland-You-Have-To-Walk.jpg */
 
  /*********************** Showcase *****************/
  #showcase {
@@ -90,11 +105,8 @@
      transition: all 400ms ease-in-out;
  }
 
- 
-
  .charts_box:hover,
- #stack_chart:hover,
- #bar_chart:hover {
+ .graphs_box:hover {
      box-shadow: 0 0 25px rgb(55, 174, 211);
  }
 
@@ -102,6 +114,8 @@
      width: 100%;
      text-align: center;
  }
+
+ /*********************** Selectors *****************/
 
  .selector {
      width: 30%;
@@ -137,9 +151,12 @@
      transform: translateY(5px) scale(0.9);
      box-shadow: none;
  }
+
+ /*********************** Population number  box *****************/
+
  .gender_population_box {
-    margin-top: 50px;
-}
+     margin-top: 50px;
+ }
 
  #population_box i {
      margin-right: 15px;
@@ -153,109 +170,108 @@
      color: rgb(247, 34, 133);
  }
 
- 
-
-
-
  /*********************** Graphs *****************/
-
- #stack_chart,
- #bar_chart {
-     padding: 10px;
-     width: 95%;
-     margin: 10px;
-     box-sizing: border-box;
- }
- #graphs{
-   height: auto;
-  
-}
  .graphs_box {
      width: 95%;
      height: auto;
+     padding: 10px;
+     margin: 10px;
+     box-sizing: border-box;
  }
 
  svg .x text {
      transform: rotate(-90deg) translate(-50px, -12px);
  }
 
- .float_btn{
-    visibility: hidden;
-    width: 50px;
-    height: 50px;
-    font-size: 25px;
-    border-radius: 50%;
-    position: fixed;
-    right: 15px;
-    bottom: 10px;
-    background-color: rgba(247, 247, 247, 0.5);
-    text-align: center;
-    color: rgb(55, 174, 211);
-    transition: all 100ms ease-in-out;
-    border: 1px solid rgb(55, 174, 211);
-}
-.visible{
-    visibility: visible;
-}
-.float_btn:active{
-    transform: scale(0.8);
-}
-.float_btn:hover{
-    background-color: rgb(55, 174, 211);
-    color: rgba(247, 247, 247, 0.8);
-}
-#top_btn{
-    bottom:70px;
-}
-.float_btn i{
-    margin-top:13px;
-}
+ #graphs {
+     height: auto;
+     display: flex;
+     flex-direction: column;
+ }
+
+ /*********************** Float buttons *****************/
+
+ .float_btn {
+     visibility: hidden;
+     width: 50px;
+     height: 50px;
+     font-size: 25px;
+     border-radius: 50%;
+     position: fixed;
+     right: 15px;
+     bottom: 10px;
+     background-color: rgba(247, 247, 247, 0.5);
+     text-align: center;
+     color: rgb(55, 174, 211);
+     transition: all 100ms ease-in-out;
+     border: 1px solid rgb(55, 174, 211);
+ }
+
+ .visible {
+     visibility: visible;
+ }
+
+ .float_btn:active {
+     transform: scale(0.8);
+ }
+
+ .float_btn:hover {
+     background-color: rgb(55, 174, 211);
+     color: rgba(247, 247, 247, 0.8);
+ }
+
+ #top_btn {
+     bottom: 70px;
+ }
+
+ .float_btn i {
+     margin-top: 13px;
+ }
+
  /*********************** Footer *****************/
- #graphs{
-    display: flex;
-    flex-direction: column;
-}
-footer{
-    background: #f5f5f5;
-    width: 100%;
-    height: 100px;
-    margin-top: 20px;
-    border-top: 1px solid rgb(55, 174, 211);    
-}
-.footer_copyrights{
-    text-align: center;
-    width: 250px;
-    padding-top:20px;
-}
-footer i{ 
-    font-size: 16px;
-    color: #333;
-    width: 34px;
-    height: 26px;
-    border: 1px solid #333;
-    border-radius: 50%;
-    text-align: center;
-    padding:10px 2px 2px 2px;
-    margin:10px 0 0 4px;
-}
 
+ footer {
+     background: #f5f5f5;
+     width: 100%;
+     height: 100px;
+     margin-top: 20px;
+     border-top: 1px solid rgb(55, 174, 211);
+ }
 
+ .footer_copyrights {
+     text-align: center;
+     width: 250px;
+     padding-top: 20px;
+ }
 
+ footer i {
+     font-size: 16px;
+     color: #333;
+     width: 34px;
+     height: 26px;
+     border: 1px solid #333;
+     border-radius: 50%;
+     text-align: center;
+     padding: 10px 2px 2px 2px;
+     margin: 10px 0 0 4px;
+ }
 
-footer i:hover {
-    border-color: rgb(55, 174, 211);
-    color: rgb(55, 174, 211);
-    -o-transition: all .3s ease-in-out;
-    transition: all .3s ease-in-out;
-    -moz-transition: all .3s ease-in-out;
-    -webkit-transition: all .3s ease-in-out;
-}
+ footer i:hover {
+     border-color: rgb(55, 174, 211);
+     color: rgb(55, 174, 211);
+     -o-transition: all .3s ease-in-out;
+     transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+     -webkit-transition: all .3s ease-in-out;
+ }
+
  /*********************** Media queries *****************/
 
  @media (min-width:576px) {
      #info {
          font-size: 12px;
      }
+
      .big_font {
          font-size: 25px;
      }
@@ -272,9 +288,10 @@ footer i:hover {
 
  @media (min-width:768px) {
      .big_font {
-         font-size: 36px;
+         font-size: 35px;
      }
-     select{
+
+     select {
          font-size: 16px;
      }
 
@@ -282,17 +299,20 @@ footer i:hover {
          top: 30%;
          font-size: 16px;
          word-spacing: 2px;
-
      }
  }
- @media (min-width:992px){
-    .big_font {
-        font-size: 46px;
-    }
-    .gender_population_box {
-        margin-top: 70px;
-    }
+
+ @media (min-width:992px) {
+     .big_font {
+         font-size: 46px;
+     }
+
+     .gender_population_box {
+         margin-top: 70px;
+     }
  }
+
+ /*********************** Keyframes *****************/
 
  @keyframes pulse {
      0% {

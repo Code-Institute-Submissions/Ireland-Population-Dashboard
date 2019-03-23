@@ -1,3 +1,23 @@
+/* 
+    1.  Calling data from CSV file
+    2.  Drawing all graphs
+    3.  Orientation alert
+    4.  Color array
+    5.  Country Pie Chart
+    6.  County Pie Chart
+    7.  Age groups Stack Chart
+    8.  Density Bar Chart
+    9.  Population number displays
+    10. Selectors
+    11. Scroll effect
+*/
+
+
+
+
+
+/***********************************************  Calling data from CSV file ********************************/
+
 queue()
     .defer(d3.csv, "assets/data/Ireland_population.csv", function (row) {
         return {
@@ -16,6 +36,7 @@ queue()
         };
     })
     .await(makeGraphs);
+/***********************************************  Drawing all graphs ********************************/
 
 function makeGraphs(error, data) {
     show_float_buttons();
@@ -32,14 +53,21 @@ function makeGraphs(error, data) {
 
     dc.renderAll();
 }
+
+/***********************************************  Orientation alert ********************************/
+
 function orientation_info(){
     if (window.matchMedia("(orientation: portrait)").matches) {
         alert('Please use landscape mode for better experience ');
      }
 };
+
+/***********************************************  Color array ********************************/
+
 let colors = ['#56AEE2', '#56E2CF','#f9ed69','#f08a5d','#b83b5e','#6a2c70','#56E289', '#68E256', '#AEE256', '#E2CF56', '#E28956', '#E28956', '#E256AE', '#CF56E2', '#8A56E2', '#8A56E2','#5668E2', '#364f6b','#3fc1c9','#fc5185','#ff8484','#d84c73','#5c3b6f']
 
-/***********************************************  Country Pie Chart */
+/***********************************************  Country Pie Chart ********************************/
+
 
 function show_country_chart(ndx) {
     let countries_dim = ndx.dimension(dc.pluck('country'));
@@ -56,6 +84,7 @@ function show_country_chart(ndx) {
 
 
 }
+/***********************************************  County Pie Chart ********************************/
 
 function show_county_chart(ndx) {
     let county_dim = ndx.dimension(dc.pluck('county'));
@@ -70,6 +99,7 @@ function show_county_chart(ndx) {
         .dimension(county_dim)
         .group(population)
 }
+/*********************************************** Age groups Stack Chart ********************************/
 
 function show_stack_chart(ndx) {
     let county_dim = ndx.dimension(dc.pluck('county'));
@@ -105,6 +135,8 @@ function show_stack_chart(ndx) {
         .yAxisLabel('Population')
         .yAxis().ticks(9);
 }
+
+/*********************************************** Density Bar Chart ********************************/
 
 function show_bar_chart(ndx) {
     let county_dim = ndx.dimension(dc.pluck('county'));
@@ -160,6 +192,9 @@ function show_bar_chart(ndx) {
         .yAxisLabel('Density')
         .yAxis().ticks(9);
 }
+
+/***********************************************  Population number displays ********************************/
+
 
 function show_total_display(ndx) {
     let population = ndx.groupAll().reduce(
@@ -256,9 +291,9 @@ function show_female_display(ndx) {
             return d.total;
         });
 }
+/***********************************************  Selectors ********************************/
 
 function show_selectors(ndx) {
-    /****************************************** Country Selector */
     let country_dim = ndx.dimension(dc.pluck('country'));
     let country_group = country_dim.group();
     dc.selectMenu('#country_selector')
@@ -279,6 +314,8 @@ function show_selectors(ndx) {
         })
         .promptText("Select County");
 }
+/***********************************************  Scroll effect ********************************/
+
 
 function show_float_buttons(){
     $(window).scroll(function () {
@@ -287,6 +324,5 @@ function show_float_buttons(){
 			} else {
 				$('.float_btn').removeClass('visible');
 			}
-		
 	});
 }

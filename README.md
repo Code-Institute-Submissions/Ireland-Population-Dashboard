@@ -1,5 +1,9 @@
 # Ireland Population Dashboard
-Single Page Application which covers  the following requirements.
+
+I designed this website for people who are looking for more informations and about Ireland such us population, density etc.
+They can choose county as well.  All information are showed in the most understandable and clear way by graphs and pie charts. Dashboard is Mobile First Designed.
+
+Project design created in Balsamiq mockups 3 is located in main folder 
 
 #### The Project Brief:
 ##### CREATE A DATA DASHBOARD
@@ -8,11 +12,6 @@ Single Page Application which covers  the following requirements.
 * Your data can be stored locally (e.g., in a js,csv file) or sourced from an API
 * Visualise your data using D3.js and dc.js
 
-## UX
-I designed this website for people who are looking for informations about Ireland such us population, density etc.
-They can choose county as well.  All information are showed in the most understandable and clear way by graphs and pie charts. Dashboard is Mobile First Designed.
-
-Project design created in Balsamiq mockups 3 is located in main folder 
 
 
 ## Features
@@ -35,6 +34,7 @@ Beside that there are 2 selectors to choose country and county and reset button 
 6. Crossfilter - JavaScript library for exploring large multivariate datasets
 7. [Font Awsome](https://fontawesome.com/) - buttons icons
 8. [Google Fonts](https://fonts.google.com/)
+9. JQUERY - scroll effect.
 9. Balsamic Mockups 3 - to create mockup
 
 
@@ -74,4 +74,5 @@ Website is deployed to github pages, exactly at this [link](https://lukaszplawin
 
 Data used in this Website was sourced from:
 * [Data.gov.ie](https://data.gov.ie/)
+Background picture downloaded from: [link](https://handluggageonly.co.uk/wp-content/uploads/2018/02/Best-Hikes-In-Ireland-You-Have-To-Walk.jpg)
 
