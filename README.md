@@ -52,7 +52,7 @@ Beside that there are 2 selectors to choose country and county and reset button 
     * Firefox (Version 65)
     * Opera (Version 58)
     * MS Edge (Version 42)
-    * Safari (Version 12)
+    * Safari (Version 5)
 
 
 # User Story
