@@ -56,7 +56,8 @@ function makeGraphs(error, data) {
 
 /***********************************************  Orientation alert ********************************/
 
-function orientation_info(){
+function orientation_info() {
+    "use strict";
     if (window.matchMedia("(orientation: portrait)").matches) {
         alert('Please use landscape mode for better experience ');
      }
@@ -64,7 +65,7 @@ function orientation_info(){
 
 /***********************************************  Color array ********************************/
 
-let colors = ['#24A9E1','#A2DEF2', '#6BC5E7','#94C5E6','#2A7DC1','#8D94E8','#5E9FD5','#4E52AD','#1A75BB','#6E70D0','#3A3D9C','#6EDCD3','#0DADA5','#C7EC8D','#B5DF73','#8CC43F','#9AE5A1','#6ED07D','#3AB34A','#82D9AE','#64BF93','#2A8E5F','#016738','#FFE605','#FDD60C','#FEC50B','#F4C899','#F5B063','#F8962E','#FCB30F','#F68B17','#F56423','#F499A0','#F88A90','#F0535C','#EF2A33','#EC909B','#E16879','#D3505E','#C93847','#EC909B','#E27683','#D3505E','#C42C39','#EFAAD7','#E585C4','#DD5FB0','#D3389D','#B58FD8','#9C73C2','#5B2789','#C4996C','#A07955','#866444','#62432C','#3B2317','#CECED0','#A7A7A7','#6E6C6D','#3A3839']
+let colors = ['#24A9E1','#A2DEF2', '#6BC5E7','#94C5E6','#2A7DC1','#8D94E8','#5E9FD5','#4E52AD','#1A75BB','#6E70D0','#3A3D9C','#6EDCD3','#0DADA5','#C7EC8D','#B5DF73','#8CC43F','#9AE5A1','#6ED07D','#3AB34A','#82D9AE','#64BF93','#2A8E5F','#016738','#FFE605','#FDD60C','#FEC50B','#F4C899','#F5B063','#F8962E','#FCB30F','#F68B17','#F56423','#F499A0','#F88A90','#F0535C','#EF2A33','#EC909B','#E16879','#D3505E','#C93847','#EC909B','#E27683','#D3505E','#C42C39','#EFAAD7','#E585C4','#DD5FB0','#D3389D','#B58FD8','#9C73C2','#5B2789','#C4996C','#A07955','#866444','#62432C','#3B2317','#CECED0','#A7A7A7','#6E6C6D','#3A3839'];
 
 /***********************************************  Country Pie Chart ********************************/
 

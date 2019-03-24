@@ -60,6 +60,9 @@ Beside that there are 2 selectors to choose country and county and reset button 
     * Scrolling down by clicking arrow button
     * Choose country and county  from select menu or by clicking pie charts to render the data.
     * click reset button to reset selected data
+    * chose 3 counties on age groups graph to compare them
+    * chose 3 counties on density graph to compare them
+    * open social media links inside footer
     * click arrow button to go to the top of website
     * check all above in small window mode
 
@@ -69,11 +72,11 @@ Beside that there are 2 selectors to choose country and county and reset button 
 
 During creation of the website I was using Visual Studio Code and git bash command line which helped me to commit and push all files to [github repository](https://github.com/LukaszPlawinski/Ireland-Population-Dashboard)
 
-Website is deployed to github pages, exactly at this [link](https://lukaszplawinski.github.io/Ireland-Population-Dashboard/)
+Website is deployed to github pages:  [Ireland Population Dashboard](https://lukaszplawinski.github.io/Ireland-Population-Dashboard/)
 
 ## Credits
 
 Data used in this Website was sourced from:
 * [Data.gov.ie](https://data.gov.ie/)
-Background picture downloaded from: [link](https://handluggageonly.co.uk/wp-content/uploads/2018/02/Best-Hikes-In-Ireland-You-Have-To-Walk.jpg)
+* Background picture downloaded from: [link](https://handluggageonly.co.uk/wp-content/uploads/2018/02/Best-Hikes-In-Ireland-You-Have-To-Walk.jpg)
 
