@@ -25,6 +25,8 @@ body {
     min-width: 320px;
     font-family: 'Lato', sans-serif;
     background-color: #fff;
+    text-rendering: optimizeLegibility;
+
 }
 
 h1,
