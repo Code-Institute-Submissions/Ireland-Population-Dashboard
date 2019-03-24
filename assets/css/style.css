@@ -85,6 +85,7 @@ h2 {
             animation: pulse 2s infinite;
     color: rgb(55, 174, 211);
     text-shadow: 0 0 1px #000;
+    text-rendering: optimizeLegibility;
 }
 
 /*********************** Pie charts *****************/
@@ -268,6 +269,7 @@ svg .x text {
 
 .float_btn i {
     margin-top: 13px;
+    text-rendering: optimizeLegibility;
 }
 
 /*********************** Footer *****************/
@@ -296,6 +298,7 @@ footer i {
     text-align: center;
     padding: 10px 2px 2px 2px;
     margin: 10px 0 0 4px;
+    text-rendering: optimizeLegibility;
 }
 
 footer i:hover {
