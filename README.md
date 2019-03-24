@@ -36,7 +36,8 @@ Beside that there are 2 selectors to choose country and county and reset button 
 7. [Font Awsome](https://fontawesome.com/) - buttons icons
 8. [Google Fonts](https://fonts.google.com/)
 9. JQUERY - scroll effect.
-9. Balsamic Mockups 3 - to create mockup
+10. [Autoprefixer](https://autoprefixer.github.io/)- plugin which add vendor prefixes for different browsers
+11. Balsamic Mockups 3 - to create mockup
 
 
 ## Testing
