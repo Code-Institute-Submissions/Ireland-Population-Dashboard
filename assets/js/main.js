@@ -64,7 +64,7 @@ function orientation_info(){
 
 /***********************************************  Color array ********************************/
 
-let colors = ['#56AEE2', '#56E2CF','#f9ed69','#f08a5d','#b83b5e','#6a2c70','#56E289', '#68E256', '#AEE256', '#E2CF56', '#E28956', '#E28956', '#E256AE', '#CF56E2', '#8A56E2', '#8A56E2','#5668E2', '#364f6b','#3fc1c9','#fc5185','#ff8484','#d84c73','#5c3b6f']
+let colors = ['#24A9E1','#A2DEF2', '#6BC5E7','#94C5E6','#2A7DC1','#8D94E8','#5E9FD5','#4E52AD','#1A75BB','#6E70D0','#3A3D9C','#6EDCD3','#0DADA5','#C7EC8D','#B5DF73','#8CC43F','#9AE5A1','#6ED07D','#3AB34A','#82D9AE','#64BF93','#2A8E5F','#016738','#FFE605','#FDD60C','#FEC50B','#F4C899','#F5B063','#F8962E','#FCB30F','#F68B17','#F56423','#F499A0','#F88A90','#F0535C','#EF2A33','#EC909B','#E16879','#D3505E','#C93847','#EC909B','#E27683','#D3505E','#C42C39','#EFAAD7','#E585C4','#DD5FB0','#D3389D','#B58FD8','#9C73C2','#5B2789','#C4996C','#A07955','#866444','#62432C','#3B2317','#CECED0','#A7A7A7','#6E6C6D','#3A3839']
 
 /***********************************************  Country Pie Chart ********************************/
 
@@ -112,7 +112,7 @@ function show_stack_chart(ndx) {
     dc.barChart('#stack_chart')
         .width(1000)
         .height(350)
-        .colors(d3.scale.ordinal().range(colors))
+        .colors(d3.scale.ordinal().range(['#f9ed69','#FEC50B','#f08a5d','#b83b5e','#6a2c70']))
         .dimension(county_dim)
         .group(age_one, '0 to 14')
         .stack(age_two, '14 to 24')
