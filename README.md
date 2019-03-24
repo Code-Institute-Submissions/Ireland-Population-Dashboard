@@ -44,6 +44,7 @@ Beside that there are 2 selectors to choose country and county and reset button 
 * Html file was tested by [HTML VALIDATOR](https://validator.w3.org/)
 * Css file was tested by [CSS Validator](https://jigsaw.w3.org/css-validator/)
 * Javascript file was tested by [JS Validator](https://codebeautify.org/jsvalidate)
+    and [jshint](https://jshint.com/)
 
 
 * The dashboard is responsive at all screen resolutions. Charts works perfectly on mobile and desktop versions of web browsers.
@@ -52,7 +53,7 @@ Beside that there are 2 selectors to choose country and county and reset button 
     * Firefox (Version 65)
     * Opera (Version 58)
     * MS Edge (Version 42)
-    * Safari (Version 5)
+    * Safari (Version 11)
 
 
 # User Story

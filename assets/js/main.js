@@ -61,7 +61,7 @@ function orientation_info() {
     if (window.matchMedia("(orientation: portrait)").matches) {
         alert('Please use landscape mode for better experience ');
      }
-};
+}
 
 /***********************************************  Color array ********************************/
 
@@ -98,7 +98,7 @@ function show_county_chart(ndx) {
         .useViewBoxResizing(true)
         .transitionDuration(500)
         .dimension(county_dim)
-        .group(population)
+        .group(population);
 }
 /*********************************************** Age groups Stack Chart ********************************/
 
@@ -176,7 +176,7 @@ function show_bar_chart(ndx) {
         .dimension(county_dim)
         .group(average_density)
         .valueAccessor(function (d) {
-            return d.value.average
+            return d.value.average;
         })
         .transitionDuration(500)
         .x(d3.scale.ordinal())
